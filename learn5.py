@@ -14,9 +14,10 @@ class Example(QWidget):
         self.initUI()
 
     def initUI(self):
-
         self.qle = QLineEdit(self)
         self.btn = QPushButton('Button', self)
+        self.info = QLabel('loading...', self)
+        self.info.move(200, 200)
 
         self.btn.resize(self.btn.sizeHint())
         self.btn.move(50, 50)
@@ -30,6 +31,7 @@ class Example(QWidget):
         self.show()
 
     def submit(self):
+        self.info.setText(self.qle.text())
         print(self.qle.text())
 
 
